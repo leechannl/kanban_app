@@ -2,7 +2,7 @@
   "name": "kanban_app",
   "version": "1.0.0",
   "description": "kanban app use React Webpack",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server"
@@ -10,6 +10,9 @@
   "author": "leechannl",
   "license": "ISC",
   "devDependencies": {
+    "babel": "^6.1.18",
+    "babel-core": "^5.8.34",
+    "babel-loader": "^5.4.0",
     "css-loader": "^0.23.0",
     "html-webpack-plugin": "^1.7.0",
     "style-loader": "^0.13.0",
@@ -17,9 +20,13 @@
     "webpack-dev-server": "^1.14.0",
     "webpack-merge": "^0.3.2"
   },
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:leechannl/kanban_app.git"
   },
-  "readme": ""
+  "readme": "see README.md"
 }
