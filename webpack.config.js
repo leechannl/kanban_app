@@ -1,5 +1,5 @@
 var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlwebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 
@@ -31,14 +31,13 @@ var common = {
     ]
   },
   plugins: [
-    // important! move HotModuleReplacementPlugin below
-    new HtmlWebpackPlugin({
+    new HtmlwebpackPlugin({
       title: 'Kanban app'
     })
   ]
 };
 
-if (TARGET == 'start' || !TARGET) {
+if(TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
     devtool: 'eval-source-map',
     devServer: {
@@ -50,6 +49,8 @@ if (TARGET == 'start' || !TARGET) {
       // display only errors to reduce the amount of output
       stats: 'errors-only',
 
+      // parse host and port from env so this is easy
+      // to customize
       host: process.env.HOST,
       port: process.env.PORT
     },
@@ -58,4 +59,3 @@ if (TARGET == 'start' || !TARGET) {
     ]
   });
 }
-
