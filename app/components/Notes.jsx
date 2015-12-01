@@ -13,10 +13,16 @@ export default class Notes extends React.Component {
     )
   }
 
-  renderNote(note) {
+  // We are using an experimental feature known as property
+  // initializer here. It allows us to bind the method `this`
+  // to point at our *App* instance.
+  //
+  // Alternatively we could `bind` at `constructor` using
+  // a line such as this.addNote = this.addNote.bind(this);
+  renderNote = (note) => {
     return (
       <li className="note" key={note.id}>
-        <Note task={note.task}/>
+        <Note task={note.task} onEdit={this.props.onEdit.bind(null, note.id)}/>
       </li>
     )
   }
